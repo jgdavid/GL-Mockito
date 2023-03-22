@@ -29,10 +29,17 @@ public class TestRPS {
 
 	@Test
 	void testRockOnpaper() {
-		Mockito.when(this.rand.nextInt(3)).thenReturn(1);
+		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
 		for (int i = 0; i < 100; i++)
-			Assertions.assertEquals(Result.DRAW, this.sim.playRPS(RPS.ROCK));
+			Assertions.assertEquals(Result.WIN, this.sim.playRPS(RPS.PAPER));
 
 	}
 
+	@Test
+	void testRockOnScissors() {
+		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
+		for (int i = 0; i < 100; i++)
+			Assertions.assertEquals(Result.LOSE, this.sim.playRPS(RPS.SCISSORS));
+
+	}
 }
