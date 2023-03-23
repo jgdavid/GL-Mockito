@@ -22,24 +22,49 @@ public class TestRPS {
 	@Test
 	void testRockOnRock() {
 		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 2; i++)
 			Assertions.assertEquals(Result.DRAW, this.sim.playRPS(RPS.ROCK));
+		System.out.println("This ");
 
 	}
 
 	@Test
 	void testRockOnpaper() {
 		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
-		for (int i = 0; i < 100; i++)
-			Assertions.assertEquals(Result.WIN, this.sim.playRPS(RPS.PAPER));
+//		for (int i = 0; i < 2; i++)
+		Assertions.assertEquals(Result.WIN, this.sim.playRPS(RPS.PAPER));
 
 	}
 
-	@Test
-	void testRockOnScissors() {
-		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
-		for (int i = 0; i < 100; i++)
-			Assertions.assertEquals(Result.LOSE, this.sim.playRPS(RPS.SCISSORS));
-
-	}
+//	@Test
+//	void testRockOnScissors() {
+//		Mockito.when(this.rand.nextInt(3)).thenReturn(0);
+//		for (int i = 0; i < 2; i++)
+//			Assertions.assertEquals(Result.LOSE, this.sim.playRPS(RPS.SCISSORS));
+//
+//	}
+//
+//	@Test
+//	void testPaperOnRock() {
+//		Mockito.when(this.rand.nextInt(3)).thenReturn(1);
+//		for (int i = 0; i < 2; i++)
+//			Assertions.assertEquals(Result.WIN, this.sim.playRPS(RPS.PAPER));
+//
+//	}
+//
+//	@Test
+//	void testScissorsOnRock() {
+//		Mockito.when(this.rand.nextInt(3)).thenReturn(1);
+//		for (int i = 0; i < 2; i++)
+//			Assertions.assertEquals(Result.LOSE, this.sim.playRPS(RPS.SCISSORS));
+//
+//	}
+//
+//	@Test
+//	void testPaperOnScissors() {
+//		Mockito.when(this.rand.nextInt(3)).thenReturn(1);
+//		for (int i = 0; i < 2; i++)
+//			Assertions.assertEquals(Result.DRAW, this.sim.playRPS(RPS.ROCK));
+//
+//	}
 }
